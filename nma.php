@@ -106,10 +106,6 @@ class NMA
 			$this->error = true;
 		endif;
 
-		if(!empty($this->priority)):
-			$this->fields['priority'] = $this->priority;
-		endif;
-
 		if(!empty($this->application)):
 			$this->fields['application'] = $this->application;
 		else:
@@ -117,17 +113,22 @@ class NMA
 			$this->error = true;
 		endif;
 
-		if(!empty($this->event) || !empty($this->description)):
-			if(!empty($this->event)):
-				$this->fields['event'] = $this->event;
-			endif;
-
-			if(!empty($this->description)):
-				$this->fields['description'] = $this->description;
-			endif;
+		if(!empty($this->event)):
+			$this->fields['event'] = $this->event;
 		else:
-			echo 'event or description is required!' . PHP_EOL;
+			echo 'event is required!' . PHP_EOL;
 			$this->error = true;
+		endif;
+
+		if(!empty($this->description)):
+			$this->fields['description'] = $this->description;
+		else:
+			echo 'description is required!' . PHP_EOL;
+			$this->error = true;
+		endif;
+
+		if(!empty($this->priority)):
+			$this->fields['priority'] = $this->priority;
 		endif;
 
 		return $this->error ? false : true;
