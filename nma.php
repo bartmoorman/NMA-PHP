@@ -88,14 +88,10 @@ class NMA
 			return false;
 		endif;
 	}
-	public function getResetTimer($format = null)
+	public function getResetTimer()
 	{
 		if(!empty($this->resettimer)):
-			if(!empty($format)):
-				return date($format, $this->resettimer);
-			else:
-				return $this->resettimer;
-			endif;
+			return $this->resettimer;
 		else:
 			return false;
 		endif;
