@@ -14,7 +14,6 @@ class NMA
 
 	private $apikeys = array();
 	private $priority = 0;
-	private $url = null;
 	private $application = null;
 	private $event = null;
 	private $description = null;
@@ -42,16 +41,6 @@ class NMA
 			return false;
 		else:
 			$this->priority = $priority;
-			return true;
-		endif;
-	}
-	public function setUrl($url)
-	{
-		if(strlen($url) > 512):
-			echo 'url must be 512 characters or less!' . PHP_EOL;
-			return false;
-		else:
-			$this->url = $url;
 			return true;
 		endif;
 	}
@@ -123,10 +112,6 @@ class NMA
 
 		if(!empty($this->priority)):
 			$this->fields['priority'] = $this->priority;
-		endif;
-
-		if(!empty($this->url)):
-			$this->fields['url'] = $this->url;
 		endif;
 
 		if(!empty($this->application)):
