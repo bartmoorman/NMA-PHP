@@ -1,5 +1,6 @@
 <?php
-require_once('nma.php');
+//This example is useful for integrating with other scripts
+require_once('inc/nma.inc');
 
 $nma = new NMA();
 

@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
-require_once('nma.php');
+//This example is useful for running via CLI
+require_once('inc/nma.inc');
 
 $nma = new NMA();
 
